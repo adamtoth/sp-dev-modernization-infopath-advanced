@@ -1,2 +1,0 @@
-﻿xsd.exe webpartmapping.xsd /c /n:SharePointPnP.Modernization.Framework
-xsd.exe pagelayoutmapping.xsd /c /n:SharePointPnP.Modernization.Framework.Publishing
