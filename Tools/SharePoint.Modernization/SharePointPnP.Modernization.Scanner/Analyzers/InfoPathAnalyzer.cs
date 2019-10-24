@@ -358,9 +358,6 @@ namespace SharePoint.Modernization.Scanner.Analyzers
                 bool modeFound = false;
                 bool productVersionFound = false;
                 bool controlFound = false;
-                bool soapConnectionFound = false;
-                bool dbConnectionFound = false;
-                bool restConnectionFound = false;
 
                 while (!parser.EndOfData)
                 {
@@ -433,10 +430,6 @@ namespace SharePoint.Modernization.Scanner.Analyzers
                             {
                                 infoPathScanResult.HasRepeatingChoiceGroup = true;
                             }
-                            else if (string.Equals(field, "SignatureLine", StringComparison.InvariantCultureIgnoreCase))
-                            {
-                                infoPathScanResult.HasDigitalSignature = true;
-                            }
                             else if (string.Equals(field, "inkpicture", StringComparison.InvariantCultureIgnoreCase))
                             {
                                 infoPathScanResult.HasInk = true;
@@ -459,17 +452,17 @@ namespace SharePoint.Modernization.Scanner.Analyzers
                                 controlFound = true;
                             }
                         }
-                        if (string.Equals(field, "SoapConnection"))
+                        if (string.Equals(field, "SoapConnection", StringComparison.InvariantCultureIgnoreCase))
                         {
                             infoPathScanResult.HasSOAPConnection = true;
                             break;
                         }
-                        if (string.Equals(field, "DBConnection"))
+                        if (string.Equals(field, "DBConnection", StringComparison.InvariantCultureIgnoreCase))
                         {
                             infoPathScanResult.HasDBConnection = true;
                             break;
                         }
-                        if (string.Equals(field, "RESTConnection"))
+                        if (string.Equals(field, "RESTConnection", StringComparison.InvariantCultureIgnoreCase))
                         {
                             infoPathScanResult.HasRESTConnection = true;
                             break;
